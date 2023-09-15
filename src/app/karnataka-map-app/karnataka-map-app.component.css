@@ -85,9 +85,10 @@
 
 /* Style the table body (tbody) */
 .custom-table tbody {
-  background-color: lightgrey;
+  background-color: whitesmoke;
  
 }
+
 .indicator{
   background-color: transparent;
 }

@@ -43,7 +43,12 @@ export class KarnatakaMapAppComponent implements OnInit {
       this.renderMap();
     });
   }
-
+  amountDif(value: any) {
+    const val = Math.abs(value);
+    if (val >= 10000000) return `${(value / 10000000).toFixed(2)} Cr`
+    if (val >= 100000) return `${(value / 100000).toFixed(2)} Lac`
+    return value;
+  }
   async fetchData() {
     try {
       const res: any = await this.http.fetchData().toPromise();
@@ -102,11 +107,12 @@ export class KarnatakaMapAppComponent implements OnInit {
             json.districtName= (this.data[i].projectDTOs[j].projectDistrict) ? (this.data[i].projectDTOs[j].projectDistrict) : ''
             json.proId = this.data[i].projectId;
             json.line = this.data[i].lineDepartmentId;
-            json.departmentName=this.data[i].departmentName;
+            json.departmentName=this.data[i].departmentName
             // json.contractorBalanceAmount=this.data[i].projectBudgetDTOz[j]>0?this.data[i].projectBudgetDTOz[j].contractorBalanceAmount:0;
             json.lineDepartmentName=this.data[i].lineDepartmentName;
-            json.projectSanctionedCost=this.data[i].projectDTOs[j].projectSanctionedCost.value
-            json.project = this.data[i].projectTitle;
+            json.projectSanctionedCost=this.amountDif(parseFloat(this.data[i].projectDTOs[j].projectSanctionedCost.value))
+            console.log("json.projectSanctionedCost",json.projectSanctionedCost);
+                        json.project = this.data[i].projectTitle;
             // for(let m=0;m<this.totalAllotAmountList[i].length;m++){
             //   if(json.project===this.totalAllotAmountList[m].project){
             //     json.contractorBalanceAmount=this.totalAllotAmountList[m].amount
