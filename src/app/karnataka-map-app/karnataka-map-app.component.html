@@ -13,17 +13,17 @@
       <tr>
         <!-- <th>District:</th>
         <th>Projects:</th> -->
-        
+        <th>##</th>
         <th>ProjectTitle</th>
-        <th>Project ID</th>
-        <th>Line Department Id</th>
+        <!-- <th>Project ID</th>
+        <th>Line Department Id</th> -->
+        <th>Department Name</th>
         <th>line Department Name</th>
         <th>Physical-Progress</th>
         <th>Financial-Progress</th>
         <th>Project Status</th>
-        <th>Project-Tender-Amount</th>
-        <th>Paid-to-contractor</th>
-        <th>contractor-Amount-Balance</th>
+        <th>Project Sanctioned cost</th>
+      
 
       </tr>
     </thead>
@@ -33,17 +33,18 @@
         <td>{{projCount}}</td> -->
         
         <td >
-          {{i+1}}. {{project.project}}
+          {{i+1}} 
         </td>
-        <td>{{project.proId}}</td>
-        <td>{{project.line}}</td>
+        <td>{{project.project}}</td>
+        <!-- <td>{{project.proId}}</td>
+        <td>{{project.line}}</td> -->
+        <td>{{project.departmentName}}</td>
         <td>{{project.lineDepartmentName}}</td>
         <td>{{project.physical}}</td>
         <td>{{project.financial}}</td>
         <td>{{project.projectStatus}}</td>
         <td>{{project.projectSanctionedCost}}</td>
-        <td>{{project.tenderAmount.value}}</td>
-        <td>{{project.contractorBalanceAmount}}</td>
+        
         <td></td>
         <td></td>
       </tr>
