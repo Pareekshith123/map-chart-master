@@ -1,0 +1,125 @@
+/* In your CSS file */
+#map {
+  width: 100%; /* Set the width to 100% of the parent container */
+  height: 600px; /* Set a fixed or appropriate height for your map */
+  position:relative; 
+  display: flex;/* Ensure it has a position set */
+  border: 1px solid #000; /* Add a border for visibility, you can remove this in production */
+}
+/* Add this CSS to your component's CSS file, e.g., karnataka-map-app.component.css */
+
+/* Style for the district tooltips */
+/* Tooltip style with transparent background */
+.leaflet-tooltip.district-tooltip {
+  background-color: transparent !important; /* Set the background color to transparent */
+  border: none !important; /* Remove the border */
+  box-shadow: none !important; /* Remove the box shadow */
+  font-size: 14px; /* Font size */
+  font-weight: bold; /* Font weight */
+  white-space: nowrap; /* Prevent line breaks */
+}
+/* Add styles for the custom-tooltip class */
+
+
+
+/* Define styles for the popup card */
+.popup-card::shadow {
+  
+  position: absolute;
+  width: fit-content; /* Adjust the width as needed */
+  top: 20%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  z-index: 100;
+  margin-top: 20%;
+  margin-bottom: 20%;
+  max-height:100vh;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow for the card effect */
+  padding: 10px;
+  border-radius: 5px;
+ 
+}
+
+/* Style the close button */
+.close-button {
+  position: absolute;
+  background-color:none;
+  color: #030303;
+  top: 5px;
+  right: 7px;
+  cursor: pointer;
+  
+  border: 2px solid rgb(248, 245, 245);
+  border-radius: 100%;
+  padding: 5px 9px;
+  font-size: 16px;
+ 
+}
+.close-button:hover{
+  background-color: red;
+  color: #ffffff;
+}
+
+
+/* Style the table inside the popup card */
+.custom-table {
+  display:block;
+  width:90vw;
+  overflow-y: scroll;
+  max-height:80vh;
+  margin-top:1.5%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+}
+
+/* Style the table header (thead) */
+.custom-table thead {
+  /* display: flex;
+  justify-content: space-between; */
+  background-color: purple;
+  color: white; /* Text color for header cells */
+}
+
+
+
+/* Style the table body (tbody) */
+.custom-table tbody {
+  background-color: lightgrey;
+ 
+}
+.indicator{
+  background-color: transparent;
+}
+
+
+
+/* Tooltip styles */
+.custom-tooltip {
+  position: absolute;
+  width: fit-content;
+  top:50%;
+  left:30%;
+  direction: right;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  border-radius: 30%;
+  background-color: rgb(243, 241, 241);
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.custom-tooltip::after {
+  content: " ";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+
+.indicator{
+background-color: transparent;
+}

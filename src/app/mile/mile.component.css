@@ -1,0 +1,45 @@
+#tableContainer{
+    position:absolute;
+    display: none;
+    width: 80%;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    max-height: 80vh; /* Adjust the height as needed */
+    overflow-y: auto;
+    background-blend-mode: lighten;
+    
+    background-color: rgb(252, 252, 252);
+    border: 4px green;}
+    /* table-styles.css */
+    
+    /* Style for the table */
+    .my-table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ddd;
+        
+      }
+      
+      /* Style for table headers */
+      .my-table th {
+        background-color: purple;
+        color: white; 
+        padding: 8px;
+        text-align: left;
+      }
+      .tablehead{
+        background-color: purple;
+      }
+      
+      /* Style for table rows */
+      .my-table tr {
+        border-bottom: 1px solid #ddd;
+      }
+      
+      /* Style for table cells */
+      .my-table td {
+        padding: 8px;
+      }
+      
