@@ -83,24 +83,8 @@ export class KarnatakaMapAppComponent implements OnInit {
     console.log("districtProjectCounts", this.districtProjectCounts);
   }
   getProjectDetails( dist: string) {
-//  for (let i = 0; i < this.data.length; i++) {  
-//   console.log(this.data[i]);
-  
-//   for (let l = 0; l < this.data[i].projectBudgetDTOz[i].length; l++) {
-//         if (this.data[i].projectBudgetDTOz[l].allotedAmount) {
-//              let json = {dept: this.overallData[i].departmentName, line: this.overallData[i].lineDepartmentName, project: this.overallData[i].projectTitle, amount: this.overallData[i].projectBudgetDTOz[l].contractorBalanceAmount};
-//           this.totalAllotAmountList.push(json);
-//           // releaseAmount += this.overallData[i].projectBudgetDTOz[l].allotedAmount;
-//         }
-//       }
-//  }
-
-    
     let arrval: any = [];
     for (let i = 0; i < this.data.length; i++) {
-     
-
-      // if (dept === this.data[i].departmentId && line === this.data[i].lineDepartmentId) {
         for (let j = 0; j < this.data[i].projectDTOs.length; j++) {
           if (dist === this.data[i].projectDTOs[j].projectDistrict) {
             let json: any = {};
@@ -112,13 +96,7 @@ export class KarnatakaMapAppComponent implements OnInit {
             json.lineDepartmentName=this.data[i].lineDepartmentName;
             json.projectSanctionedCost=this.amountDif(parseFloat(this.data[i].projectDTOs[j].projectSanctionedCost.value))
             console.log("json.projectSanctionedCost",json.projectSanctionedCost);
-                        json.project = this.data[i].projectTitle;
-            // for(let m=0;m<this.totalAllotAmountList[i].length;m++){
-            //   if(json.project===this.totalAllotAmountList[m].project){
-            //     json.contractorBalanceAmount=this.totalAllotAmountList[m].amount
-            //   }
-            // }
-            // console.log("jslilly",json.contractorBalanceAmount);
+            json.project = this.data[i].projectTitle;
             json.projectStatus=this.data[i].projectDTOs[j].projectStatus
             json.tenderAmount = (this.data[i].projectDTOs[j].projectTenderAmount) ? (this.data[i].projectDTOs[j].projectTenderAmount) : 0;
             json.milestone = (this.data[i].projectDTOs[j].milestoneCount) ? this.data[i].projectDTOs[j].milestoneCount : 0;
@@ -143,26 +121,6 @@ export class KarnatakaMapAppComponent implements OnInit {
         }
         
         console.log("arrava",arrval)
-      // }
-      // for (let l = 0; l < this.overallData[i].projectBudgetDTOz.length; l++) {
-      //   if (this.overallData[i].projectBudgetDTOz[l].allotedAmount) {
-      //     let json = {dept: this.overallData[i].departmentName, line: this.overallData[i].lineDepartmentName, project: this.overallData[i].projectTitle, amount: this.overallData[i].projectBudgetDTOz[l].allotedAmount};
-      //     this.totalAllotAmountList.push(json);
-      //     releaseAmount += this.overallData[i].projectBudgetDTOz[l].allotedAmount;
-      //   }
-
-      //   if (this.overallData[i].projectBudgetDTOz[l].paidAmount) {
-      //     let json = {dept: this.overallData[i].departmentName, line: this.overallData[i].lineDepartmentName, project: this.overallData[i].projectTitle, amount: this.overallData[i].projectBudgetDTOz[l].paidAmount};
-      //     this.totalPaidAmountList.push(json);
-      //     paidAmount += this.overallData[i].projectBudgetDTOz[l].paidAmount;
-      //   }
-
-      //   if (this.overallData[i].projectBudgetDTOz[l].contractorBalanceAmount) {
-      //     let json = {dept: this.overallData[i].departmentName, line: this.overallData[i].lineDepartmentName, project: this.overallData[i].projectTitle, amount: this.overallData[i].projectBudgetDTOz[l].contractorBalanceAmount};
-      //     this.totalBalAmountList.push(json);
-      //     balanceAmount += this.overallData[i].projectBudgetDTOz[l].contractorBalanceAmount;
-      //   }
-      // }
     }
     return arrval;
   }
@@ -254,7 +212,7 @@ export class KarnatakaMapAppComponent implements OnInit {
             
                 
                 
-                // for (let i = 0; i<=this.projCount; i++) {
+               
                     this.getProjectDetails(this.selectedDistrict);
                     this.projTitle.push(this.getProjectDetails(this.selectedDistrict));
 
